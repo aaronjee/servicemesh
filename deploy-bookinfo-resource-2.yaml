@@ -1,0 +1,110 @@
+## ==============================
+## 5. Istio IngressGateway
+## ==============================
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: istio-ingressgateway
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: istio-ingressgateway-sds
+rules:
+- apiGroups: [""]
+  resources: ["secrets"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: istio-ingressgateway-sds
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: istio-ingressgateway-sds
+subjects:
+- kind: ServiceAccount
+  name: istio-ingressgateway
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: istio-ingressgateway
+  labels:
+    app: istio-ingressgateway
+    istio: ingressgateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: istio-ingressgateway
+      istio: ingressgateway
+  template:
+    metadata:
+      labels:
+        app: istio-ingressgateway
+        istio: ingressgateway
+        sidecar.istio.io/inject: "true"
+      annotations:
+        inject.istio.io/templates: gateway
+    spec:
+      serviceAccountName: istio-ingressgateway
+      containers:
+      - name: istio-proxy
+        image: auto
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
+          seccompProfile:
+            type: RuntimeDefault
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: istio-ingressgateway
+  labels:
+    istio: ingressgateway
+spec:
+  type: ClusterIP
+  selector:
+    istio: ingressgateway
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8080
+  - name: https
+    port: 443
+    targetPort: 8443
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: bookinfo-gateway
+spec:
+  to:
+    kind: Service
+    name: istio-ingressgateway
+  port:
+    targetPort: http
+---
+## ==============================
+## 6. Istio Gateway + VirtualService
+## ==============================
+apiVersion: networking.istio.io/v1
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 8080
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
