@@ -1,0 +1,779 @@
+2026-04-21T09:10:37.983846Z	info	FLAG: --concurrency="0"
+2026-04-21T09:10:37.983885Z	info	FLAG: --domain="bookinfo.svc.cluster.local"
+2026-04-21T09:10:37.983896Z	info	FLAG: --help="false"
+2026-04-21T09:10:37.983900Z	info	FLAG: --log_as_json="false"
+2026-04-21T09:10:37.983905Z	info	FLAG: --log_caller=""
+2026-04-21T09:10:37.983909Z	info	FLAG: --log_output_level="default:info"
+2026-04-21T09:10:37.983914Z	info	FLAG: --log_stacktrace_level="default:none"
+2026-04-21T09:10:37.983923Z	info	FLAG: --log_target="[stdout]"
+2026-04-21T09:10:37.983927Z	info	FLAG: --meshConfig="./etc/istio/config/mesh"
+2026-04-21T09:10:37.983931Z	info	FLAG: --outlierLogPath=""
+2026-04-21T09:10:37.983936Z	info	FLAG: --profiling="true"
+2026-04-21T09:10:37.983941Z	info	FLAG: --proxyComponentLogLevel="misc:error"
+2026-04-21T09:10:37.983946Z	info	FLAG: --proxyLogLevel="warning"
+2026-04-21T09:10:37.983949Z	info	FLAG: --serviceCluster="istio-proxy"
+2026-04-21T09:10:37.983954Z	info	FLAG: --stsPort="0"
+2026-04-21T09:10:37.983958Z	info	FLAG: --templateFile=""
+2026-04-21T09:10:37.983962Z	info	FLAG: --tokenManagerPlugin=""
+2026-04-21T09:10:37.983969Z	info	FLAG: --vklog="0"
+2026-04-21T09:10:37.983975Z	info	Version 1.26.2-4b1e497cd1c6b51e6a45e6c0abe9aab6bb19e0a8-Clean
+2026-04-21T09:10:37.983984Z	info	Set max file descriptors (ulimit -n) to: 1048576
+2026-04-21T09:10:37.984377Z	info	Proxy role	ips=[10.128.2.34] type=sidecar id=productpage-v1-54987bcb9d-v7tqk.bookinfo domain=bookinfo.svc.cluster.local
+2026-04-21T09:10:37.984504Z	info	Apply proxy config from env {}
+
+2026-04-21T09:10:37.987147Z	info	cpu limit detected as 2, setting concurrency
+2026-04-21T09:10:37.987853Z	info	Effective config: binaryPath: /usr/local/bin/envoy
+concurrency: 2
+configPath: ./etc/istio/proxy
+controlPlaneAuthPolicy: MUTUAL_TLS
+discoveryAddress: istiod.istio-system.svc:15012
+drainDuration: 45s
+proxyAdminPort: 15000
+serviceCluster: istio-proxy
+statNameLength: 189
+statusPort: 15020
+terminationDrainDuration: 5s
+
+2026-04-21T09:10:37.987877Z	info	JWT policy is third-party-jwt
+2026-04-21T09:10:37.987881Z	info	using credential fetcher of JWT type in cluster.local trust domain
+2026-04-21T09:10:37.993378Z	info	Prometheus scraping configuration: {true /metrics 9080}
+2026-04-21T09:10:37.993502Z	info	Starting default Istio SDS Server
+2026-04-21T09:10:37.993544Z	info	CA Endpoint istiod.istio-system.svc:15012, provider Citadel
+2026-04-21T09:10:37.993594Z	info	Using CA istiod.istio-system.svc:15012 cert with certs: var/run/secrets/istio/root-cert.pem
+2026-04-21T09:10:37.993582Z	info	Opening status port 15020
+2026-04-21T09:10:37.995079Z	info	xdsproxy	Initializing with upstream address "istiod.istio-system.svc:15012" and cluster "Kubernetes"
+2026-04-21T09:10:37.997759Z	info	Pilot SAN: [istiod.istio-system.svc]
+2026-04-21T09:10:37.999570Z	info	Starting proxy agent
+2026-04-21T09:10:37.999643Z	info	Envoy command: [-c etc/istio/proxy/envoy-rev.json --drain-time-s 45 --drain-strategy immediate --local-address-ip-version v4 --file-flush-interval-msec 1000 --disable-hot-restart --allow-unknown-static-fields -l warning --component-log-level misc:error --skip-deprecated-logs --concurrency 2]
+2026-04-21T09:10:38.012021Z	info	sds	Starting SDS grpc server
+2026-04-21T09:10:38.012076Z	info	sds	Starting SDS server for workload certificates, will listen on "var/run/secrets/workload-spiffe-uds/socket"
+2026-04-21T09:10:38.110151Z	warning	envoy main external/envoy/source/server/server.cc:874	Usage of the deprecated runtime key overload.global_downstream_max_connections, consider switching to `envoy.resource_monitors.global_downstream_max_connections` instead.This runtime key will be removed in future.	thread=9
+2026-04-21T09:10:38.110622Z	warning	envoy main external/envoy/source/server/server.cc:970	There is no configured limit to the number of allowed active downstream connections. Configure a limit in `envoy.resource_monitors.global_downstream_max_connections` resource monitor.	thread=9
+2026-04-21T09:10:38.121607Z	info	xdsproxy	connected to delta upstream XDS server: istiod.istio-system.svc:15012	id=1
+2026-04-21T09:10:38.164321Z	info	cache	generated new workload certificate	resourceName=default latency=167.207679ms ttl=23h59m59.835690077s
+2026-04-21T09:10:38.164400Z	info	cache	Root cert has changed, start rotating root cert
+2026-04-21T09:10:38.164448Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.835553277s
+2026-04-21T09:10:38.313160Z	info	ads	ADS: new connection for node:1
+2026-04-21T09:10:38.313274Z	info	cache	returned workload certificate from cache	ttl=23h59m59.686728995s
+2026-04-21T09:10:38.314605Z	info	ads	ADS: new connection for node:2
+2026-04-21T09:10:38.314749Z	info	cache	returned workload trust anchor from cache	ttl=23h59m59.685253564s
+2026-04-21T09:10:39.778691Z	info	Readiness succeeded in 1.799374519s
+2026-04-21T09:10:39.779323Z	info	Envoy proxy is ready
+{
+  "timestamp": "2026-04-21T09:11:18.661Z",
+  "method": "GET",
+  "path": "/details/0",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "19",
+  "request_duration_ms": "0",
+  "response_duration_ms": "19",
+  "downstream_remote_address": "10.128.2.34:38620",
+  "downstream_local_address": "172.30.138.224:9080",
+  "downstream_tls_version": "-",
+  "downstream_tls_cipher": "-",
+  "downstream_peer_uri_san": "-",
+  "downstream_local_uri_san": "-",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "608",
+  "downstream_wire_bytes_sent": "337",
+  "requested_server_name": "-",
+  "upstream_host": "10.128.2.45:9080",
+  "upstream_cluster": "outbound|9080||details.bookinfo.svc.cluster.local;",
+  "upstream_local_address": "10.128.2.34:37120",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "178",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "-",
+  "x_request_id": "c0d7311f-7291-9cca-93ac-97891b4de8ee",
+  "authority": "details:9080"
+}
+{
+  "timestamp": "2026-04-21T09:11:18.688Z",
+  "method": "GET",
+  "path": "/reviews/0",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "23",
+  "request_duration_ms": "0",
+  "response_duration_ms": "23",
+  "downstream_remote_address": "10.128.2.34:53710",
+  "downstream_local_address": "172.30.15.201:9080",
+  "downstream_tls_version": "-",
+  "downstream_tls_cipher": "-",
+  "downstream_peer_uri_san": "-",
+  "downstream_local_uri_san": "-",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "608",
+  "downstream_wire_bytes_sent": "569",
+  "requested_server_name": "-",
+  "upstream_host": "10.128.2.49:9080",
+  "upstream_cluster": "outbound|9080||reviews.bookinfo.svc.cluster.local;",
+  "upstream_local_address": "10.128.2.34:34782",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "358",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "-",
+  "x_request_id": "c0d7311f-7291-9cca-93ac-97891b4de8ee",
+  "authority": "reviews:9080"
+}
+{
+  "timestamp": "2026-04-21T09:11:18.622Z",
+  "method": "GET",
+  "path": "/productpage",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "129",
+  "request_duration_ms": "0",
+  "response_duration_ms": "129",
+  "downstream_remote_address": "10.131.0.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "1923",
+  "downstream_wire_bytes_sent": "10250",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:45931",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "9429",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.131.0.2",
+  "x_request_id": "c0d7311f-7291-9cca-93ac-97891b4de8ee",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+{
+  "timestamp": "2026-04-21T09:11:18.788Z",
+  "method": "GET",
+  "path": "/static/img/izzy.png",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "7",
+  "request_duration_ms": "0",
+  "response_duration_ms": "7",
+  "downstream_remote_address": "10.131.0.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "1903",
+  "downstream_wire_bytes_sent": "34270",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:45931",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "33322",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.131.0.2",
+  "x_request_id": "7990f660-4936-98ae-80a3-498ce7e66101",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+{
+  "timestamp": "2026-04-21T09:11:18.795Z",
+  "method": "GET",
+  "path": "/static/tailwind/tailwind.css",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "18",
+  "request_duration_ms": "0",
+  "response_duration_ms": "15",
+  "downstream_remote_address": "10.128.2.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "1851",
+  "downstream_wire_bytes_sent": "366650",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:40907",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "365680",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.128.2.2",
+  "x_request_id": "7a48e3a8-7e40-983d-85f9-56c3375a241e",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+{
+  "timestamp": "2026-04-21T09:11:46.105Z",
+  "method": "POST",
+  "path": "/login",
+  "protocol": "HTTP/1.1",
+  "response_code": "302",
+  "response_flags": "-",
+  "duration_ms": "22",
+  "request_duration_ms": "0",
+  "response_duration_ms": "22",
+  "downstream_remote_address": "10.128.2.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "2175",
+  "downstream_wire_bytes_sent": "1316",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:34885",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "27",
+  "bytes_sent": "319",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.128.2.2",
+  "x_request_id": "3e062141-45c0-9af4-9630-4f63fc36102d",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+{
+  "timestamp": "2026-04-21T09:11:46.209Z",
+  "method": "GET",
+  "path": "/details/0",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "7",
+  "request_duration_ms": "0",
+  "response_duration_ms": "7",
+  "downstream_remote_address": "10.128.2.34:41178",
+  "downstream_local_address": "172.30.138.224:9080",
+  "downstream_tls_version": "-",
+  "downstream_tls_cipher": "-",
+  "downstream_peer_uri_san": "-",
+  "downstream_local_uri_san": "-",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "692",
+  "downstream_wire_bytes_sent": "336",
+  "requested_server_name": "-",
+  "upstream_host": "10.128.2.45:9080",
+  "upstream_cluster": "outbound|9080||details.bookinfo.svc.cluster.local;",
+  "upstream_local_address": "10.128.2.34:55742",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "178",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "-",
+  "x_request_id": "634410af-9b35-9edc-af74-82afd5131b68",
+  "authority": "details:9080"
+}
+{
+  "timestamp": "2026-04-21T09:11:46.225Z",
+  "method": "GET",
+  "path": "/reviews/0",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "5",
+  "request_duration_ms": "0",
+  "response_duration_ms": "5",
+  "downstream_remote_address": "10.128.2.34:51308",
+  "downstream_local_address": "172.30.15.201:9080",
+  "downstream_tls_version": "-",
+  "downstream_tls_cipher": "-",
+  "downstream_peer_uri_san": "-",
+  "downstream_local_uri_san": "-",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "692",
+  "downstream_wire_bytes_sent": "568",
+  "requested_server_name": "-",
+  "upstream_host": "10.128.2.49:9080",
+  "upstream_cluster": "outbound|9080||reviews.bookinfo.svc.cluster.local;",
+  "upstream_local_address": "10.128.2.34:34782",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "358",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "-",
+  "x_request_id": "634410af-9b35-9edc-af74-82afd5131b68",
+  "authority": "reviews:9080"
+}
+{
+  "timestamp": "2026-04-21T09:11:46.189Z",
+  "method": "GET",
+  "path": "/productpage",
+  "protocol": "HTTP/1.1",
+  "response_code": "200",
+  "response_flags": "-",
+  "duration_ms": "68",
+  "request_duration_ms": "0",
+  "response_duration_ms": "68",
+  "downstream_remote_address": "10.131.0.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "2093",
+  "downstream_wire_bytes_sent": "10439",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:57371",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "9619",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.131.0.2",
+  "x_request_id": "634410af-9b35-9edc-af74-82afd5131b68",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+{
+  "timestamp": "2026-04-21T09:11:46.297Z",
+  "method": "GET",
+  "path": "/static/tailwind/tailwind.css",
+  "protocol": "HTTP/1.1",
+  "response_code": "304",
+  "response_flags": "-",
+  "duration_ms": "5",
+  "request_duration_ms": "0",
+  "response_duration_ms": "5",
+  "downstream_remote_address": "10.128.2.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "2017",
+  "downstream_wire_bytes_sent": "870",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:57371",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "0",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.128.2.2",
+  "x_request_id": "4cc808ef-19d2-9fef-abb7-804b4b589ff1",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+{
+  "timestamp": "2026-04-21T09:11:46.311Z",
+  "method": "GET",
+  "path": "/static/img/izzy.png",
+  "protocol": "HTTP/1.1",
+  "response_code": "304",
+  "response_flags": "-",
+  "duration_ms": "4",
+  "request_duration_ms": "0",
+  "response_duration_ms": "4",
+  "downstream_remote_address": "10.131.0.2:0",
+  "downstream_local_address": "10.128.2.34:9080",
+  "downstream_tls_version": "TLSv1.3",
+  "downstream_tls_cipher": "TLS_AES_256_GCM_SHA384",
+  "downstream_peer_uri_san": "spiffe://cluster.local/ns/istio-ingressgateway/sa/secret-reader",
+  "downstream_local_uri_san": "spiffe://cluster.local/ns/bookinfo/sa/bookinfo-productpage",
+  "downstream_peer_subject": "-",
+  "downstream_wire_bytes_received": "2067",
+  "downstream_wire_bytes_sent": "864",
+  "requested_server_name": "outbound_.9080_._.productpage.bookinfo.svc.cluster.local",
+  "upstream_host": "10.128.2.34:9080",
+  "upstream_cluster": "inbound|9080||;",
+  "upstream_local_address": "127.0.0.6:57371",
+  "upstream_transport_failure": "-",
+  "connection_termination": "-",
+  "route_name": "default",
+  "bytes_received": "0",
+  "bytes_sent": "0",
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36",
+  "x_forwarded_for": "10.212.134.100,192.168.10.1,192.168.10.6,10.131.0.2",
+  "x_request_id": "a3672785-be5b-9fd5-a6aa-bd08400e4b07",
+  "authority": "bookinfo-gateway-bookinfo.apps.mylab.paas.local"
+}
+2026-04-21T09:41:25.077506Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"154","StreamId":"3470169861198650420"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:25 GMT'
+'server', 'envoy'
+	thread=9
+2026-04-21T09:41:25.077560Z	debug	envoy misc external/envoy/source/server/admin/admin_filter.cc:102	nextChunk: response.length=1190 more_data=false end_stream=true	thread=9
+2026-04-21T09:41:25.077580Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"154","StreamId":"3470169861198650420"] Codec completed encoding stream.	thread=9
+2026-04-21T09:41:25.725928Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_tcp_listener.cc:160	[Tags: "ConnectionId":"155"] new connection from 10.128.2.2:50432	thread=19
+2026-04-21T09:41:25.726029Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"155"] new stream	thread=19
+2026-04-21T09:41:25.726112Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.33'
+'accept', '*/*'
+'connection', 'close'
+	thread=19
+2026-04-21T09:41:25.726131Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] request end stream timestamp recorded	thread=19
+2026-04-21T09:41:25.726162Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"155"] current connecting state: false	thread=19
+2026-04-21T09:41:25.726201Z	debug	envoy router external/envoy/source/common/router/router.cc:539	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] cluster 'agent' match for URL '/healthz/ready'	thread=19
+2026-04-21T09:41:25.726265Z	debug	envoy router external/envoy/source/common/router/router.cc:830	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] router decoding headers:
+':authority', '10.128.2.34:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'kube-probe/1.33'
+'accept', '*/*'
+'x-forwarded-proto', 'http'
+'x-request-id', '838c46b1-f4b9-44da-9aac-1279ac25c1c7'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=19
+2026-04-21T09:41:25.726304Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:302	[Tags: "ConnectionId":"26"] using existing fully connected connection	thread=19
+2026-04-21T09:41:25.726311Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:219	[Tags: "ConnectionId":"26"] creating stream	thread=19
+2026-04-21T09:41:25.726329Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:591	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] pool ready	thread=19
+2026-04-21T09:41:25.726362Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:142	[Tags: "ConnectionId":"26"] encode complete	thread=19
+2026-04-21T09:41:25.726718Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:129	[Tags: "ConnectionId":"26"] response complete	thread=19
+2026-04-21T09:41:25.726750Z	debug	envoy router external/envoy/source/common/router/router.cc:1654	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] upstream headers complete: end_stream=true	thread=19
+2026-04-21T09:41:25.726790Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1840	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] closing connection due to connection close header	thread=19
+2026-04-21T09:41:25.726804Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Tue, 21 Apr 2026 09:41:25 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=19
+2026-04-21T09:41:25.726816Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"155","StreamId":"11604053931530768605"] Codec completed encoding stream.	thread=19
+2026-04-21T09:41:25.726836Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:183	[Tags: "ConnectionId":"155"] closing data_to_write=143 type=0	thread=19
+2026-04-21T09:41:25.726845Z	debug	envoy connection external/envoy/source/common/network/connection_impl_base.cc:51	[Tags: "ConnectionId":"155"] setting delayed close timer with timeout 1000 ms	thread=19
+2026-04-21T09:41:25.726858Z	debug	envoy pool external/envoy/source/common/http/http1/conn_pool.cc:53	[Tags: "ConnectionId":"26"] response complete	thread=19
+2026-04-21T09:41:25.726875Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:254	[Tags: "ConnectionId":"26"] destroying stream: 0 active remaining, readyForStream false, currentUnusedCapacity 1	thread=19
+2026-04-21T09:41:25.726991Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:852	[Tags: "ConnectionId":"155"] write flush complete	thread=19
+2026-04-21T09:41:25.727010Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"155"] closing socket: 1	thread=19
+2026-04-21T09:41:25.727053Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"155"] adding to cleanup list	thread=19
+2026-04-21T09:41:26.005893Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:774	[Tags: "ConnectionId":"153"] remote close	thread=9
+2026-04-21T09:41:26.005928Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"153"] closing socket: 0	thread=9
+2026-04-21T09:41:26.006016Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"153"] adding to cleanup list	thread=9
+2026-04-21T09:41:26.086273Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:774	[Tags: "ConnectionId":"154"] remote close	thread=9
+2026-04-21T09:41:26.086315Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"154"] closing socket: 0	thread=9
+2026-04-21T09:41:26.086406Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"154"] adding to cleanup list	thread=9
+2026-04-21T09:41:28.242434Z	debug	envoy main external/envoy/source/server/server.cc:245	flushing stats	thread=9
+2026-04-21T09:41:31.037112Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_tcp_listener.cc:160	[Tags: "ConnectionId":"156"] new connection from 127.0.0.1:37146	thread=9
+2026-04-21T09:41:31.037223Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"156"] new stream	thread=9
+2026-04-21T09:41:31.037296Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"156","StreamId":"8029906382308434964"] request headers complete (end_stream=true):
+':authority', 'localhost:46215'
+':path', '/logging'
+':method', 'POST'
+'user-agent', 'Go-http-client/1.1'
+'content-length', '0'
+'accept-encoding', 'gzip'
+	thread=9
+2026-04-21T09:41:31.037316Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"156","StreamId":"8029906382308434964"] request end stream timestamp recorded	thread=9
+2026-04-21T09:41:31.037350Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"156"] current connecting state: false	thread=9
+2026-04-21T09:41:31.037377Z	debug	envoy admin external/envoy/source/server/admin/admin_filter.cc:85	[Tags: "ConnectionId":"156","StreamId":"8029906382308434964"] request complete: path: /logging	thread=9
+2026-04-21T09:41:31.037458Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"156","StreamId":"8029906382308434964"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:31 GMT'
+'server', 'envoy'
+	thread=9
+2026-04-21T09:41:31.037482Z	debug	envoy misc external/envoy/source/server/admin/admin_filter.cc:102	nextChunk: response.length=1190 more_data=false end_stream=true	thread=9
+2026-04-21T09:41:31.037496Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"156","StreamId":"8029906382308434964"] Codec completed encoding stream.	thread=9
+2026-04-21T09:41:31.089439Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_tcp_listener.cc:160	[Tags: "ConnectionId":"157"] new connection from 127.0.0.1:37156	thread=9
+2026-04-21T09:41:31.091039Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"157"] new stream	thread=9
+2026-04-21T09:41:31.091140Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"157","StreamId":"4603173988683683541"] request headers complete (end_stream=true):
+':authority', 'localhost:33885'
+':path', '/logging'
+':method', 'POST'
+'user-agent', 'Go-http-client/1.1'
+'content-length', '0'
+'accept-encoding', 'gzip'
+	thread=9
+2026-04-21T09:41:31.091157Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"157","StreamId":"4603173988683683541"] request end stream timestamp recorded	thread=9
+2026-04-21T09:41:31.091193Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"157"] current connecting state: false	thread=9
+2026-04-21T09:41:31.091220Z	debug	envoy admin external/envoy/source/server/admin/admin_filter.cc:85	[Tags: "ConnectionId":"157","StreamId":"4603173988683683541"] request complete: path: /logging	thread=9
+2026-04-21T09:41:31.091298Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"157","StreamId":"4603173988683683541"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:31 GMT'
+'server', 'envoy'
+	thread=9
+2026-04-21T09:41:31.091330Z	debug	envoy misc external/envoy/source/server/admin/admin_filter.cc:102	nextChunk: response.length=1190 more_data=false end_stream=true	thread=9
+2026-04-21T09:41:31.091349Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"157","StreamId":"4603173988683683541"] Codec completed encoding stream.	thread=9
+2026-04-21T09:41:32.039814Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:774	[Tags: "ConnectionId":"156"] remote close	thread=9
+2026-04-21T09:41:32.039864Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"156"] closing socket: 0	thread=9
+2026-04-21T09:41:32.039963Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"156"] adding to cleanup list	thread=9
+2026-04-21T09:41:32.094053Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:774	[Tags: "ConnectionId":"157"] remote close	thread=9
+2026-04-21T09:41:32.094089Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"157"] closing socket: 0	thread=9
+2026-04-21T09:41:32.094164Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"157"] adding to cleanup list	thread=9
+2026-04-21T09:41:33.242657Z	debug	envoy main external/envoy/source/server/server.cc:245	flushing stats	thread=9
+2026-04-21T09:41:38.242965Z	debug	envoy main external/envoy/source/server/server.cc:245	flushing stats	thread=9
+2026-04-21T09:41:38.477381Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"10"] new stream	thread=18
+2026-04-21T09:41:38.477590Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/3.5.0'
+'accept', 'application/openmetrics-text;version=1.0.0;escaping=underscores;q=0.6,application/openmetrics-text;version=0.0.1;q=0.5,text/plain;version=1.0.0;escaping=underscores;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2'
+'accept-encoding', 'gzip'
+'x-prometheus-scrape-timeout-seconds', '10'
+	thread=18
+2026-04-21T09:41:38.477709Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] request end stream timestamp recorded	thread=18
+2026-04-21T09:41:38.477756Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"10"] current connecting state: false	thread=18
+2026-04-21T09:41:38.477796Z	debug	envoy router external/envoy/source/common/router/router.cc:539	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] cluster 'prometheus_stats' match for URL '/stats/prometheus'	thread=18
+2026-04-21T09:41:38.477861Z	debug	envoy router external/envoy/source/common/router/router.cc:830	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] router decoding headers:
+':authority', '10.128.2.34:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'Prometheus/3.5.0'
+'accept', 'application/openmetrics-text;version=1.0.0;escaping=underscores;q=0.6,application/openmetrics-text;version=0.0.1;q=0.5,text/plain;version=1.0.0;escaping=underscores;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2'
+'accept-encoding', 'gzip'
+'x-prometheus-scrape-timeout-seconds', '10'
+'x-forwarded-proto', 'http'
+'x-request-id', '1ca2a66e-3caf-4c8e-bf2e-16db50ff5ecd'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=18
+2026-04-21T09:41:38.477888Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:302	[Tags: "ConnectionId":"11"] using existing fully connected connection	thread=18
+2026-04-21T09:41:38.477896Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:219	[Tags: "ConnectionId":"11"] creating stream	thread=18
+2026-04-21T09:41:38.477910Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:591	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] pool ready	thread=18
+2026-04-21T09:41:38.477947Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:142	[Tags: "ConnectionId":"11"] encode complete	thread=18
+2026-04-21T09:41:38.478111Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"12"] new stream	thread=9
+2026-04-21T09:41:38.478187Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"12","StreamId":"1910074844231128957"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/3.5.0'
+'accept', 'application/openmetrics-text;version=1.0.0;escaping=underscores;q=0.6,application/openmetrics-text;version=0.0.1;q=0.5,text/plain;version=1.0.0;escaping=underscores;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2'
+'accept-encoding', 'gzip'
+'x-prometheus-scrape-timeout-seconds', '10'
+'x-forwarded-proto', 'http'
+'x-request-id', '1ca2a66e-3caf-4c8e-bf2e-16db50ff5ecd'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=9
+2026-04-21T09:41:38.478212Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"12","StreamId":"1910074844231128957"] request end stream timestamp recorded	thread=9
+2026-04-21T09:41:38.478252Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"12"] current connecting state: false	thread=9
+2026-04-21T09:41:38.478283Z	debug	envoy admin external/envoy/source/server/admin/admin_filter.cc:85	[Tags: "ConnectionId":"12","StreamId":"1910074844231128957"] request complete: path: /stats/prometheus	thread=9
+2026-04-21T09:41:38.481116Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"12","StreamId":"1910074844231128957"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:38 GMT'
+'server', 'envoy'
+	thread=9
+2026-04-21T09:41:38.481155Z	debug	envoy misc external/envoy/source/server/admin/admin_filter.cc:102	nextChunk: response.length=353732 more_data=false end_stream=true	thread=9
+2026-04-21T09:41:38.481173Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"12","StreamId":"1910074844231128957"] Codec completed encoding stream.	thread=9
+2026-04-21T09:41:38.481629Z	debug	envoy router external/envoy/source/common/router/router.cc:1654	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] upstream headers complete: end_stream=false	thread=18
+2026-04-21T09:41:38.481740Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:38 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '3'
+	thread=18
+2026-04-21T09:41:38.481787Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:129	[Tags: "ConnectionId":"11"] response complete	thread=18
+2026-04-21T09:41:38.481810Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"10","StreamId":"3437668562812785781"] Codec completed encoding stream.	thread=18
+2026-04-21T09:41:38.481824Z	debug	envoy pool external/envoy/source/common/http/http1/conn_pool.cc:53	[Tags: "ConnectionId":"11"] response complete	thread=18
+2026-04-21T09:41:38.481831Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:254	[Tags: "ConnectionId":"11"] destroying stream: 0 active remaining, readyForStream false, currentUnusedCapacity 1	thread=18
+2026-04-21T09:41:40.726168Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_tcp_listener.cc:160	[Tags: "ConnectionId":"158"] new connection from 10.128.2.2:32954	thread=19
+2026-04-21T09:41:40.726292Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"158"] new stream	thread=19
+2026-04-21T09:41:40.726387Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.33'
+'accept', '*/*'
+'connection', 'close'
+	thread=19
+2026-04-21T09:41:40.726413Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] request end stream timestamp recorded	thread=19
+2026-04-21T09:41:40.726450Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"158"] current connecting state: false	thread=19
+2026-04-21T09:41:40.726498Z	debug	envoy router external/envoy/source/common/router/router.cc:539	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] cluster 'agent' match for URL '/healthz/ready'	thread=19
+2026-04-21T09:41:40.726569Z	debug	envoy router external/envoy/source/common/router/router.cc:830	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] router decoding headers:
+':authority', '10.128.2.34:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'kube-probe/1.33'
+'accept', '*/*'
+'x-forwarded-proto', 'http'
+'x-request-id', '0d63d14d-d82f-413b-a689-a3e70ef14472'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=19
+2026-04-21T09:41:40.726655Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:302	[Tags: "ConnectionId":"26"] using existing fully connected connection	thread=19
+2026-04-21T09:41:40.726667Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:219	[Tags: "ConnectionId":"26"] creating stream	thread=19
+2026-04-21T09:41:40.726681Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:591	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] pool ready	thread=19
+2026-04-21T09:41:40.726712Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:142	[Tags: "ConnectionId":"26"] encode complete	thread=19
+2026-04-21T09:41:40.727036Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:129	[Tags: "ConnectionId":"26"] response complete	thread=19
+2026-04-21T09:41:40.727060Z	debug	envoy router external/envoy/source/common/router/router.cc:1654	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] upstream headers complete: end_stream=true	thread=19
+2026-04-21T09:41:40.727095Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1840	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] closing connection due to connection close header	thread=19
+2026-04-21T09:41:40.727108Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Tue, 21 Apr 2026 09:41:40 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=19
+2026-04-21T09:41:40.727120Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"158","StreamId":"13252979626013622075"] Codec completed encoding stream.	thread=19
+2026-04-21T09:41:40.727143Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:183	[Tags: "ConnectionId":"158"] closing data_to_write=143 type=0	thread=19
+2026-04-21T09:41:40.727159Z	debug	envoy connection external/envoy/source/common/network/connection_impl_base.cc:51	[Tags: "ConnectionId":"158"] setting delayed close timer with timeout 1000 ms	thread=19
+2026-04-21T09:41:40.727176Z	debug	envoy pool external/envoy/source/common/http/http1/conn_pool.cc:53	[Tags: "ConnectionId":"26"] response complete	thread=19
+2026-04-21T09:41:40.727186Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:254	[Tags: "ConnectionId":"26"] destroying stream: 0 active remaining, readyForStream false, currentUnusedCapacity 1	thread=19
+2026-04-21T09:41:40.727291Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:852	[Tags: "ConnectionId":"158"] write flush complete	thread=19
+2026-04-21T09:41:40.727305Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"158"] closing socket: 1	thread=19
+2026-04-21T09:41:40.727387Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"158"] adding to cleanup list	thread=19
+2026-04-21T09:41:43.242079Z	debug	envoy main external/envoy/source/server/server.cc:245	flushing stats	thread=9
+2026-04-21T09:41:48.243673Z	debug	envoy main external/envoy/source/server/server.cc:245	flushing stats	thread=9
+2026-04-21T09:41:51.828879Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"6"] new stream	thread=19
+2026-04-21T09:41:51.828998Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/3.5.0'
+'accept', 'application/openmetrics-text;version=1.0.0;escaping=underscores;q=0.6,application/openmetrics-text;version=0.0.1;q=0.5,text/plain;version=1.0.0;escaping=underscores;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2'
+'accept-encoding', 'gzip'
+'x-prometheus-scrape-timeout-seconds', '10'
+	thread=19
+2026-04-21T09:41:51.829016Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] request end stream timestamp recorded	thread=19
+2026-04-21T09:41:51.829047Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"6"] current connecting state: false	thread=19
+2026-04-21T09:41:51.829083Z	debug	envoy router external/envoy/source/common/router/router.cc:539	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] cluster 'prometheus_stats' match for URL '/stats/prometheus'	thread=19
+2026-04-21T09:41:51.829147Z	debug	envoy router external/envoy/source/common/router/router.cc:830	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] router decoding headers:
+':authority', '10.128.2.34:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'Prometheus/3.5.0'
+'accept', 'application/openmetrics-text;version=1.0.0;escaping=underscores;q=0.6,application/openmetrics-text;version=0.0.1;q=0.5,text/plain;version=1.0.0;escaping=underscores;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2'
+'accept-encoding', 'gzip'
+'x-prometheus-scrape-timeout-seconds', '10'
+'x-forwarded-proto', 'http'
+'x-request-id', 'a0ede5df-15fa-4563-89b4-73457cd00f9f'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=19
+2026-04-21T09:41:51.829174Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:302	[Tags: "ConnectionId":"7"] using existing fully connected connection	thread=19
+2026-04-21T09:41:51.829181Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:219	[Tags: "ConnectionId":"7"] creating stream	thread=19
+2026-04-21T09:41:51.829192Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:591	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] pool ready	thread=19
+2026-04-21T09:41:51.829220Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:142	[Tags: "ConnectionId":"7"] encode complete	thread=19
+2026-04-21T09:41:51.829337Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"8"] new stream	thread=9
+2026-04-21T09:41:51.830277Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"8","StreamId":"17995109019128009269"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15090'
+':path', '/stats/prometheus'
+':method', 'GET'
+'user-agent', 'Prometheus/3.5.0'
+'accept', 'application/openmetrics-text;version=1.0.0;escaping=underscores;q=0.6,application/openmetrics-text;version=0.0.1;q=0.5,text/plain;version=1.0.0;escaping=underscores;q=0.4,text/plain;version=0.0.4;q=0.3,*/*;q=0.2'
+'accept-encoding', 'gzip'
+'x-prometheus-scrape-timeout-seconds', '10'
+'x-forwarded-proto', 'http'
+'x-request-id', 'a0ede5df-15fa-4563-89b4-73457cd00f9f'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=9
+2026-04-21T09:41:51.830321Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"8","StreamId":"17995109019128009269"] request end stream timestamp recorded	thread=9
+2026-04-21T09:41:51.830350Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"8"] current connecting state: false	thread=9
+2026-04-21T09:41:51.830957Z	debug	envoy admin external/envoy/source/server/admin/admin_filter.cc:85	[Tags: "ConnectionId":"8","StreamId":"17995109019128009269"] request complete: path: /stats/prometheus	thread=9
+2026-04-21T09:41:51.833753Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"8","StreamId":"17995109019128009269"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:51 GMT'
+'server', 'envoy'
+	thread=9
+2026-04-21T09:41:51.833786Z	debug	envoy misc external/envoy/source/server/admin/admin_filter.cc:102	nextChunk: response.length=353732 more_data=false end_stream=true	thread=9
+2026-04-21T09:41:51.833803Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"8","StreamId":"17995109019128009269"] Codec completed encoding stream.	thread=9
+2026-04-21T09:41:51.834011Z	debug	envoy router external/envoy/source/common/router/router.cc:1654	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] upstream headers complete: end_stream=false	thread=19
+2026-04-21T09:41:51.834053Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] encoding headers via codec (end_stream=false):
+':status', '200'
+'content-type', 'text/plain; charset=UTF-8'
+'cache-control', 'no-cache, max-age=0'
+'x-content-type-options', 'nosniff'
+'date', 'Tue, 21 Apr 2026 09:41:51 GMT'
+'server', 'envoy'
+'x-envoy-upstream-service-time', '4'
+	thread=19
+2026-04-21T09:41:51.834224Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:129	[Tags: "ConnectionId":"7"] response complete	thread=19
+2026-04-21T09:41:51.834250Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"6","StreamId":"7077821026120476475"] Codec completed encoding stream.	thread=19
+2026-04-21T09:41:51.834261Z	debug	envoy pool external/envoy/source/common/http/http1/conn_pool.cc:53	[Tags: "ConnectionId":"7"] response complete	thread=19
+2026-04-21T09:41:51.834269Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:254	[Tags: "ConnectionId":"7"] destroying stream: 0 active remaining, readyForStream false, currentUnusedCapacity 1	thread=19
+2026-04-21T09:41:53.243911Z	debug	envoy main external/envoy/source/server/server.cc:245	flushing stats	thread=9
+2026-04-21T09:41:55.725749Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_tcp_listener.cc:160	[Tags: "ConnectionId":"159"] new connection from 10.128.2.2:59604	thread=19
+2026-04-21T09:41:55.725841Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:394	[Tags: "ConnectionId":"159"] new stream	thread=19
+2026-04-21T09:41:55.725920Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1196	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] request headers complete (end_stream=true):
+':authority', '10.128.2.34:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+'user-agent', 'kube-probe/1.33'
+'accept', '*/*'
+'connection', 'close'
+	thread=19
+2026-04-21T09:41:55.725933Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1179	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] request end stream timestamp recorded	thread=19
+2026-04-21T09:41:55.725960Z	debug	envoy connection external/envoy/source/common/network/connection_impl.h:99	[Tags: "ConnectionId":"159"] current connecting state: false	thread=19
+2026-04-21T09:41:55.725997Z	debug	envoy router external/envoy/source/common/router/router.cc:539	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] cluster 'agent' match for URL '/healthz/ready'	thread=19
+2026-04-21T09:41:55.726051Z	debug	envoy router external/envoy/source/common/router/router.cc:830	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] router decoding headers:
+':authority', '10.128.2.34:15021'
+':path', '/healthz/ready'
+':method', 'GET'
+':scheme', 'http'
+'user-agent', 'kube-probe/1.33'
+'accept', '*/*'
+'x-forwarded-proto', 'http'
+'x-request-id', 'd33839f5-51ff-4407-b35d-cd30a6047e49'
+'x-envoy-expected-rq-timeout-ms', '15000'
+	thread=19
+2026-04-21T09:41:55.726074Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:302	[Tags: "ConnectionId":"26"] using existing fully connected connection	thread=19
+2026-04-21T09:41:55.726081Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:219	[Tags: "ConnectionId":"26"] creating stream	thread=19
+2026-04-21T09:41:55.726093Z	debug	envoy router external/envoy/source/common/router/upstream_request.cc:591	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] pool ready	thread=19
+2026-04-21T09:41:55.726127Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:142	[Tags: "ConnectionId":"26"] encode complete	thread=19
+2026-04-21T09:41:55.726654Z	debug	envoy client external/envoy/source/common/http/codec_client.cc:129	[Tags: "ConnectionId":"26"] response complete	thread=19
+2026-04-21T09:41:55.726677Z	debug	envoy router external/envoy/source/common/router/router.cc:1654	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] upstream headers complete: end_stream=true	thread=19
+2026-04-21T09:41:55.726714Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1840	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] closing connection due to connection close header	thread=19
+2026-04-21T09:41:55.726729Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:1906	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] encoding headers via codec (end_stream=true):
+':status', '200'
+'date', 'Tue, 21 Apr 2026 09:41:55 GMT'
+'content-length', '0'
+'x-envoy-upstream-service-time', '0'
+'server', 'envoy'
+'connection', 'close'
+	thread=19
+2026-04-21T09:41:55.726741Z	debug	envoy http external/envoy/source/common/http/conn_manager_impl.cc:2021	[Tags: "ConnectionId":"159","StreamId":"5491547529890962204"] Codec completed encoding stream.	thread=19
+2026-04-21T09:41:55.726756Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:183	[Tags: "ConnectionId":"159"] closing data_to_write=143 type=0	thread=19
+2026-04-21T09:41:55.726763Z	debug	envoy connection external/envoy/source/common/network/connection_impl_base.cc:51	[Tags: "ConnectionId":"159"] setting delayed close timer with timeout 1000 ms	thread=19
+2026-04-21T09:41:55.726775Z	debug	envoy pool external/envoy/source/common/http/http1/conn_pool.cc:53	[Tags: "ConnectionId":"26"] response complete	thread=19
+2026-04-21T09:41:55.726781Z	debug	envoy pool external/envoy/source/common/conn_pool/conn_pool_base.cc:254	[Tags: "ConnectionId":"26"] destroying stream: 0 active remaining, readyForStream false, currentUnusedCapacity 1	thread=19
+2026-04-21T09:41:55.726884Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:852	[Tags: "ConnectionId":"159"] write flush complete	thread=19
+2026-04-21T09:41:55.726898Z	debug	envoy connection external/envoy/source/common/network/connection_impl.cc:314	[Tags: "ConnectionId":"159"] closing socket: 1	thread=19
+2026-04-21T09:41:55.726935Z	debug	envoy conn_handler external/envoy/source/common/listener_manager/active_stream_listener_base.cc:136	[Tags: "ConnectionId":"159"] adding to cleanup list	thread=19
